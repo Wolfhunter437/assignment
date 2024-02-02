@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
+import PopUpNav from './PopUpNav';
 
 export default function Navbar() {
   useEffect(() => {
-    let logo = document.getElementById('logo');
     let logo1 = document.getElementsByClassName('logo1')[0];
     let logo2 = document.getElementsByClassName('logo1')[1];
     let phone = document.getElementsByClassName('phoneNumber')[0];
@@ -10,7 +10,6 @@ export default function Navbar() {
     let hamburger2 = document.getElementsByClassName('bar')[1];
     let hamburger3 = document.getElementsByClassName('bar')[2];
     let nav = document.getElementById('nav');
-    let lastScrollPosition = window.scrollY;
 
     window.addEventListener('scroll', function () {
       let value = window.scrollY
@@ -37,7 +36,42 @@ export default function Navbar() {
         hamburger3.style.background = 'white';
       }
     })
-  })
+
+
+    const openNav = document.querySelectorAll('.hamburger');
+
+    const handleButtonClick = () => {
+      const popupMenus = document.querySelectorAll('.popup');
+      for (const popupMenu of popupMenus) {
+        popupMenu.classList.add('active');
+      }
+    };
+
+    const closeMenu = () => {
+      const popupMenus = document.querySelectorAll('.popup');
+      for (const popupMenu of popupMenus) {
+        popupMenu.classList.remove('active');
+        popupMenu.classList.add('closing');
+        setTimeout(() => {
+          popupMenu.classList.remove('closing');
+        }, 1500);
+      }
+    };
+
+    for (const button of openNav) {
+      button.addEventListener('click', handleButtonClick);
+    }
+
+    const closeButtons = document.querySelectorAll('.popUpNav-close');
+    for (const closeButton of closeButtons) {
+      closeButton.addEventListener('click', closeMenu);
+    }
+  });
+
+  const renderContent = () => {
+    return <PopUpNav />
+  }
+
   return (
     <nav className='navbar' id='nav'>
       <div className='hamburger-container'>
@@ -49,13 +83,17 @@ export default function Navbar() {
         </div>
       </button>
       </div>
-      <div className='logo' id='logo'>
+      <div className='logo'>
         <img className='logo1' src="./Assets/logo.png" alt="" />
         <img className='logo1' src="./Assets/logo1.png" alt="" />
       </div>
       <div className='phoneNumber'>
         <span className="material-symbols-outlined">call</span>
         <span className='number'>+91-124-7125074</span>
+      </div>
+
+      <div className="popup">
+        {renderContent()}
       </div>
     </nav>
   )

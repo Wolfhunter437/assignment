@@ -2,6 +2,7 @@ import './App.scss';
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
 import Section2 from './Components/Section2';
+import Section3 from './Components/Section3';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <Navbar />
     <Header />
     <Section2 />
+    <Section3 />
     </>
   );
 }

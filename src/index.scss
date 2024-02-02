@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
     overflow-x: hidden;
 }
 
@@ -37,5 +40,28 @@
     100%{
       opacity: 1;
       transform: translateX(0px);
+    }
+  }
+
+  @keyframes openNav{
+    0%{
+      min-width: 0;
+      height: 0;
+    }
+    100%{
+      min-width: 100%;
+      height: 100svh;
+    }
+  }
+
+  @keyframes closeNav{
+    0%{
+      min-width: 100%;
+      height: 100svh;
+    }
+    100%{
+      min-width: 0;
+      height: 0;
+      display: none;
     }
   }
