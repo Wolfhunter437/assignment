@@ -91,10 +91,8 @@ export default function Section3() {
                 </div>
                 <div className='section3Slider'>
                     <Swiper
-                        slidesPerView={3}
-                        spaceBetween={30}
-                        freeMode={true}
                         navigation={true}
+                        centeredSlides={false}
                         pagination={{
                             clickable: true,
                             dynamicBullets: true
@@ -102,6 +100,28 @@ export default function Section3() {
                         modules={[Navigation, FreeMode]}
                         className="mySwiper"
                         onSwiper={getRef}
+                        breakpoints={{
+                            280: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                                loop: true
+                            },
+                            768: {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                                loop: true
+                            },
+                            1024: {
+                                slidesPerView: 2,
+                                spaceBetween: 25,
+                                loop: false
+                            },
+                            1280: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                                loop: false
+                            }
+                        }}
                     >
                         {slides.map((slide, slideIndex) => (
                             <SwiperSlide key={slideIndex} onClick={() => handleSlideClick(slideIndex)}>

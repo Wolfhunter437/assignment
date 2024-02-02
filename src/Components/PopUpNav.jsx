@@ -10,6 +10,8 @@ export default function PopUpNav() {
       <div style={{ position: 'absolute', zIndex: 997, width: '100vw', height: '100vh' }}>
         <button className='popUpNav-close'>Close</button>
         <div className='popup-nav'>
+          <div>
+
           <ul className='nav-ul'>
             <hr />
             <li><a href='#'>HOME</a></li>
@@ -28,6 +30,7 @@ export default function PopUpNav() {
             <i class="fa-brands fa-linkedin-in"></i>
             <i class="fa-brands fa-facebook-f"></i>
             <i class="fa-brands fa-x-twitter"></i>
+          </div>
           </div>
           <ul className="notNav">
             <div>

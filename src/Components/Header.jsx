@@ -10,10 +10,10 @@ export default function Header() {
             <Swiper
                 grabCursor={true}
                 effect={'creative'}
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 creativeEffect={{
                     prev: {
                         shadow: false,
