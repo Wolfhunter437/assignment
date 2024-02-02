@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Wolfhunter437/assignment/static/css/main.d130999b.css",
+    "main.js": "/Wolfhunter437/assignment/static/js/main.58f0cd44.js",
+    "index.html": "/Wolfhunter437/assignment/index.html",
+    "main.d130999b.css.map": "/Wolfhunter437/assignment/static/css/main.d130999b.css.map",
+    "main.58f0cd44.js.map": "/Wolfhunter437/assignment/static/js/main.58f0cd44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d130999b.css",
+    "static/js/main.58f0cd44.js"
+  ]
+}
